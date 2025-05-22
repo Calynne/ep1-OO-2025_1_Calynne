@@ -66,10 +66,10 @@ O enunciado do trabalho pode ser encontrado aqui:
 
 ## Observações (Extras ou Dificuldades)
 
-- [Espaço para o aluno comentar qualquer funcionalidade extra que implementou, dificuldades enfrentadas, ou considerações importantes.]
+- O projeto foi extremamente desafiador, entretando, muito divertido, durante o processo fiz x e y  coisa e tal aplicação foi trabalhosa no momento em que eu implementei o Z. Dessa forma, considero que  [Espaço para o aluno comentar qualquer funcionalidade extra que implementou, dificuldades enfrentadas, ou considerações importantes.]
 
 ---
 
 ## Contato
 
-- [Opcional: E-mail pessoal do aluno.]
+- calynne2014@gmail.com
