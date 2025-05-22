@@ -9,11 +9,10 @@ O enunciado do trabalho pode ser encontrado aqui:
 
 ## Dados do Aluno
 
-- **Nome completo:** [Preencher aqui]
-- **Matrícula:** [Preencher aqui]
-- **Curso:** [Preencher aqui]
-- **Turma:** [Preencher aqui]
-
+- **Nome completo:** Calynne Ellen da Silva Jesus
+- **Matrícula:** 242004546
+- **Curso:** Engenharias 
+- **Turma:** 06
 ---
 
 ## Instruções para Compilação e Execução
