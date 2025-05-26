@@ -1,62 +1,19 @@
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Aluno implements Serializable {
-    private static final long serialVersionUID = 1L;
-
-    private String nome;
+public class Aluno extends Pessoa {
+    
     private String matricula;
-    private String cursoGraduacao;
+    private String curso;
     private boolean especial;
     private List<String> disciplinasMatriculadas;
 
-    public Aluno(String nome, String matricula, String cursoGraduacao, boolean especial) {
-        this.nome = nome;
+    public Aluno(String nome, String matricula, String curso, boolean especial) {
+        setNome(nome);
         this.matricula = matricula;
-        this.cursoGraduacao = cursoGraduacao;
+        this.curso = curso;
         this.especial = especial;
         this.disciplinasMatriculadas = new ArrayList<>();
-    }
-
-    public void listarDisciplinas() {
-        if (disciplinasMatriculadas.isEmpty()) {
-            System.out.println("Você não está matriculado em nenhuma disciplina.");
-        } else {
-            System.out.println("Disciplinas matriculadas:");
-            for (String d : disciplinasMatriculadas) {
-                System.out.println("- " + d);
-            }
-        }
-    }
-
-    public void adicionarDisciplina(String nomeDisciplina) {
-        if (especial && disciplinasMatriculadas.size() >= 2) {
-            System.out.println("Limite de 2 disciplinas para alunos especiais.");
-            return;
-        }
-        if (disciplinasMatriculadas.contains(nomeDisciplina)) {
-            System.out.println("Você já está matriculado nessa disciplina.");
-            return;
-        }
-        disciplinasMatriculadas.add(nomeDisciplina);
-        System.out.println("Disciplina adicionada com sucesso.");
-    }
-
-    public void trancarDisciplina(String nomeDisciplina) {
-        if (disciplinasMatriculadas.remove(nomeDisciplina)) {
-            System.out.println("Disciplina '" + nomeDisciplina + "' trancada com sucesso.");
-        } else {
-            System.out.println("Você não está matriculado nessa disciplina.");
-        }
-    }
-
-    public boolean possuiDisciplina(String nomeDisciplina) {
-        return disciplinasMatriculadas.contains(nomeDisciplina);
-    }
-
-    public boolean pdMatri() {
-        return especial && disciplinasMatriculadas.size() >= 2;
     }
 
     public String getNome() {
@@ -68,7 +25,7 @@ public class Aluno implements Serializable {
     }
 
     public String getCurso() {
-        return cursoGraduacao;
+        return curso;
     }
 
     public boolean isEspecial() {
@@ -83,8 +40,29 @@ public class Aluno implements Serializable {
         this.disciplinasMatriculadas = disciplinas;
     }
 
+    public void adicionarDisciplina(String disciplina) {
+        if (!disciplinasMatriculadas.contains(disciplina)) {
+            disciplinasMatriculadas.add(disciplina);
+        }
+    }
+
+    public void trancarDisciplina(String disciplina) {
+        disciplinasMatriculadas.remove(disciplina);
+    }
+
+    public void listarDisciplinas() {
+        if (disciplinasMatriculadas.isEmpty()) {
+            System.out.println("Você não está matriculado em nenhuma disciplina.");
+        } else {
+            System.out.println("Disciplinas matriculadas:");
+            for (String d : disciplinasMatriculadas) {
+                System.out.println("- " + d);
+            }
+        }
+    }
+
+    @Override
     public String toString() {
-        return nome + " - " + matricula + " - " + cursoGraduacao +
-               (especial ? " (Especial)" : "");
+        return getNome() + " - " + matricula + " - " + curso + (especial ? " (Especial)" : "");
     }
 }

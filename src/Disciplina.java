@@ -7,16 +7,14 @@ public class Disciplina implements Serializable {
     private String codigo;
     private int cargaHoraria;
     private List<String> preRequisitos;
-    private List<Aluno> alunosMatriculados;
-    private int maxAlunos;
+    private List<Turma> turmas;
 
     public Disciplina(String nome, String codigo, int cargaHoraria, List<String> preRequisitos) {
         this.nome = nome;
         this.codigo = codigo;
         this.cargaHoraria = cargaHoraria;
         this.preRequisitos = new ArrayList<>(preRequisitos);
-        this.alunosMatriculados = new ArrayList<>();
-        this.maxAlunos = 30; // valor padrão
+        this.turmas = new ArrayList<>();
     }
 
     public String getNome() {
@@ -31,24 +29,23 @@ public class Disciplina implements Serializable {
         return cargaHoraria;
     }
 
-    public List<String> getPreReq() {
+    public List<String> getPreRequisitos() {
         return preRequisitos;
     }
 
-    public boolean temVaga() {
-        return alunosMatriculados.size() < maxAlunos;
+    public List<Turma> getTurmas() {
+        return turmas;
     }
 
-    public boolean matricular(Aluno aluno) {
-        if (!temVaga()) {
-            return false;
+    public void adicionarTurma(Turma turma) {
+        for (Turma t : turmas) {
+            if (t.getHorario().equalsIgnoreCase(turma.getHorario())) {
+                System.out.println("Já existe uma turma nesse horário.");
+                return;
+            }
         }
-        alunosMatriculados.add(aluno);
-        return true;
-    }
-
-    public void removerAluno(Aluno aluno) {
-        alunosMatriculados.remove(aluno);
+        turmas.add(turma);
+        System.out.println("Turma adicionada com sucesso à disciplina " + nome + ".");
     }
 
     public String toString() {
@@ -56,5 +53,32 @@ public class Disciplina implements Serializable {
                ", Código: " + codigo +
                ", Carga horária: " + cargaHoraria +
                ", Pré-requisitos: " + (preRequisitos.isEmpty() ? "Nenhum" : preRequisitos.toString());
+    }
+
+    // ✅ Converte a disciplina em linha de texto para salvar em .txt
+    public String toCSV() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(nome).append(";")
+          .append(codigo).append(";")
+          .append(cargaHoraria);
+        for (String prereq : preRequisitos) {
+            sb.append(";").append(prereq);
+        }
+        return sb.toString();
+    }
+
+    // ✅ Cria disciplina a partir de uma linha do .txt
+    public static Disciplina fromCSV(String linha) {
+        String[] partes = linha.split(";");
+        if (partes.length < 3) return null;
+
+        String nome = partes[0];
+        String codigo = partes[1];
+        int cargaHoraria = Integer.parseInt(partes[2]);
+        List<String> prereqs = new ArrayList<>();
+        for (int i = 3; i < partes.length; i++) {
+            prereqs.add(partes[i]);
+        }
+        return new Disciplina(nome, codigo, cargaHoraria, prereqs);
     }
 }
