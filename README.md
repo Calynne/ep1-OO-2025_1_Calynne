@@ -59,7 +59,6 @@ javac Principal.java
 - [ok ] Persistência de dados em arquivos (.txt ou .csv)
 - [ok ] Tratamento de duplicidade de matrículas
 - [ok ] Uso de herança, polimorfismo e encapsulamento
-
 ---
 
 ## Observações (Extras ou Dificuldades)
