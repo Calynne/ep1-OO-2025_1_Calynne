@@ -22,10 +22,9 @@ javac Principal.java
 2. **Execução:**  
  java Principal
 3. **Estrutura de Pastas:**  
-   [Descrever aqui as principais pastas do projeto]
-
+   src e bin, o src serve paa o código e o bim para salvar arquivo
 3. **Versão do JAVA utilizada:**  
-   [Descrever aqui como versão do JAVA utilizada no projeto. Sugestão: `java 21`]
+ java 21
 
 ---
 
