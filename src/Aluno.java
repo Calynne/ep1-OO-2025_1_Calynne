@@ -3,15 +3,14 @@ import java.util.List;
 
 public class Aluno extends Pessoa {
     
-    private String matricula;
-    private String curso;
+    
     private boolean especial;
     private List<String> disciplinasMatriculadas;
 
     public Aluno(String nome, String matricula, String curso, boolean especial) {
         setNome(nome);
-        this.matricula = matricula;
-        this.curso = curso;
+        setMatricula(matricula);
+        setCurso(curso);
         this.especial = especial;
         this.disciplinasMatriculadas = new ArrayList<>();
     }

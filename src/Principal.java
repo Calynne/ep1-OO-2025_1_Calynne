@@ -146,6 +146,10 @@ public static void carregarTurmas(List<Disciplina> disciplinas) {
 
         int opc = -1;
         while (opc != 0) {
+            System.out.println("Sistema de gerenciamento estudantil");
+            System.out.println("MENU PRINCIPAL");
+            System.out.println("===================================");
+            System.out.println("Escolha uma das opções abaixo:");
             System.out.println("Digite 1 para acessar o Modo aluno (Normal e Especial)");
             System.out.println("Digite 2 para acessar o Modo disciplina/turma");
             System.out.println("Digite 3 para acessar o Modo avaliação/frequência");
