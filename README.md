@@ -38,35 +38,34 @@ javac Principal.java
 ## Prints da Execução
 
 1. Menu Principal:  
-   ![Inserir Print 1](caminho/do/print1.png)
+(imagem/Menuprincipal.png)
+
 
 2. Cadastro de Aluno:  
-   ![Inserir Print 2](caminho/do/print2.png)
+ (imagem/Cadastro.png)
 
-3. Relatório de Frequência/Notas:  
+4. Relatório de Frequência/Notas:  
    ![Inserir Print 3](caminho/do/print3.png)
 
 ---
 
 ## Principais Funcionalidades Implementadas
 
-- [ ] Cadastro, listagem, matrícula e trancamento de alunos (Normais e Especiais)
-- [ ] Cadastro de disciplinas e criação de turmas (presenciais e remotas)
-- [ ] Matrícula de alunos em turmas, respeitando vagas e pré-requisitos
+- [ok ] Cadastro, listagem, matrícula e trancamento de alunos (Normais e Especiais)
+- [ok ] Cadastro de disciplinas e criação de turmas (presenciais e remotas)
+- [ok ] Matrícula de alunos em turmas, respeitando vagas e pré-requisitos
 - [ ] Lançamento de notas e controle de presença
 - [ ] Cálculo de média final e verificação de aprovação/reprovação
 - [ ] Relatórios de desempenho acadêmico por aluno, turma e disciplina
-- [ ] Persistência de dados em arquivos (.txt ou .csv)
-- [ ] Tratamento de duplicidade de matrículas
-- [ ] Uso de herança, polimorfismo e encapsulamento
+- [ok ] Persistência de dados em arquivos (.txt ou .csv)
+- [ok ] Tratamento de duplicidade de matrículas
+- [ok ] Uso de herança, polimorfismo e encapsulamento
 
 ---
 
 ## Observações (Extras ou Dificuldades)
 
-- O projeto foi extremamente desafiador, entretando, muito divertido, durante o processo fiz x e y  coisa e tal aplicação foi trabalhosa no momento em que eu implementei o Z. Dessa forma, considero que  [Espaço para o aluno comentar qualquer funcionalidade extra que implementou, dificuldades enfrentadas, ou considerações importantes.]
-
----
+- O projeto foi extremamente desafiador, entretando, muito divertido, durante o processo fiz a Lógica de Matrículas e Pré requisitos, e tal aplicação foi trabalhosa no momento em que eu tentei fazer, pois  como garantir que um aluno só se matricule em alguma matéria  com os pré-requisitos cumpridos? E foi necessário aprender a usar listas de pré-requisitos na classe Disciplina.
 
 ## Contato
 
